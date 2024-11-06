@@ -7,6 +7,7 @@
 -- kickstart.nvim and not kitchen-sink.nvim ;)
 vim.fn.sign_define('DapBreakpoint', { text = '🟥', texthl = '', linehl = '', numhl = '' })
 vim.fn.sign_define('DapStopped', { text = '▶️', texthl = '', linehl = '', numhl = '' })
+
 return {
   -- NOTE: Yes, you can install new plugins here!
   'mfussenegger/nvim-dap',
@@ -115,5 +116,8 @@ return {
         detached = vim.fn.has 'win32' == 0,
       },
     }
+
+    -- Python specific config
+    require('dap-python').setup 'python3'
   end,
 }
