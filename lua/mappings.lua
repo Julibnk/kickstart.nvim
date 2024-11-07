@@ -26,6 +26,7 @@ map('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- Custom keymaps
 map('i', 'jj', '<Esc>')
+map('i', 'jk', '<Esc>')
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
@@ -36,8 +37,8 @@ map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 --  Move in insert mode
-map('i', '<C-b>', '<ESC>^i', { desc = 'move beginning of line' })
-map('i', '<C-e>', '<End>', { desc = 'move end of line' })
+map('i', '<C-i>', '<ESC>^i', { desc = 'move beginning of line' })
+map('i', '<C-a>', '<End>', { desc = 'move end of line' })
 map('i', '<C-h>', '<Left>', { desc = 'move left' })
 map('i', '<C-l>', '<Right>', { desc = 'move right' })
 map('i', '<C-j>', '<Down>', { desc = 'move down' })
