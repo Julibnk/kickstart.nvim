@@ -14,8 +14,29 @@ return {
   -- NOTE: And you can specify dependencies as well
   dependencies = {
     -- Creates a beautiful debugger UI
-    'rcarriga/nvim-dap-ui',
-
+    {
+      'rcarriga/nvim-dap-ui',
+  -- stylua: ignore
+  keys = {
+    { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
+    { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
+  },
+      opts = {},
+      config = function(_, opts)
+        local dap = require 'dap'
+        local dapui = require 'dapui'
+        dapui.setup(opts)
+        dap.listeners.after.event_initialized['dapui_config'] = function()
+          dapui.open {}
+        end
+        dap.listeners.before.event_terminated['dapui_config'] = function()
+          dapui.close {}
+        end
+        dap.listeners.before.event_exited['dapui_config'] = function()
+          dapui.close {}
+        end
+      end,
+    },
     -- Required dependency for nvim-dap-ui
     'nvim-neotest/nvim-nio',
 
@@ -26,6 +47,11 @@ return {
     -- Add your own debuggers here
     'leoluz/nvim-dap-go',
     'mfussenegger/nvim-dap-python',
+    -- virtual text for the debugger
+    {
+      'theHamsta/nvim-dap-virtual-text',
+      opts = {},
+    },
   },
   keys = function(_, keys)
     local dap = require 'dap'
