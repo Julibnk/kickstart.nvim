@@ -5,8 +5,11 @@
 -- Primarily focused on configuring the debugger for Go, but can
 -- be extended to other languages as well. That's why it's called
 -- kickstart.nvim and not kitchen-sink.nvim ;)
-vim.fn.sign_define('DapBreakpoint', { text = '🟥', texthl = '', linehl = '', numhl = '' })
-vim.fn.sign_define('DapStopped', { text = '▶️', texthl = '', linehl = '', numhl = '' })
+vim.fn.sign_define('DapBreakpoint', { text = ' ', texthl = '', linehl = '', numhl = '' })
+vim.fn.sign_define('LogPoint', { text = '.>', texthl = '', linehl = '', numhl = '' })
+vim.fn.sign_define('DapBreakpointCondition', { text = ' ', texthl = '', linehl = '', numhl = '' })
+vim.fn.sign_define('DapBreakpointRejected', { text = ' ', texthl = '', linehl = '', numhl = '' })
+vim.fn.sign_define('DapStopped', { text = '󰁕 ', texthl = '', linehl = '', numhl = '' })
 
 return {
   -- NOTE: Yes, you can install new plugins here!
@@ -62,9 +65,9 @@ return {
       { '<F1>', dap.step_into, desc = 'Debug: Step Into' },
       { '<F2>', dap.step_over, desc = 'Debug: Step Over' },
       { '<F3>', dap.step_out, desc = 'Debug: Step Out' },
-      { '<leader>b', dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
+      { '<leader>db', dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
       {
-        '<leader>B',
+        '<leader>dB',
         function()
           dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
         end,

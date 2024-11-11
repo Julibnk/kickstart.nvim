@@ -43,3 +43,13 @@ map('i', '<C-h>', '<Left>', { desc = 'move left' })
 map('i', '<C-l>', '<Right>', { desc = 'move right' })
 map('i', '<C-j>', '<Down>', { desc = 'move down' })
 map('i', '<C-k>', '<Up>', { desc = 'move up' })
+
+-- Buffers
+-- Switch to the next buffer
+map('n', '<leader>bn', ':bnext<CR>', { desc = '[B]uffer [n]ext' })
+
+-- Switch to the previous buffer
+map('n', '<leader>bp', ':bprevious<CR>', { desc = '[B]uffer [p]revious' })
+
+-- Close the current buffer
+map('n', '<leader>bd', ':bdelete<CR>', { desc = '[B]uffer [d]elete' })
