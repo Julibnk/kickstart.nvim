@@ -11,11 +11,12 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree toggle float<CR>', desc = 'NeoTree reveal', silent = true },
+    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
     filesystem = {
       window = {
+        position = 'right',
         mappings = {
           ['\\'] = 'close_window',
         },
@@ -23,6 +24,10 @@ return {
       filtered_items = {
         visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"
         hide_dotfiles = false,
+        hide_by_name = {
+          '.git',
+          '.DS_Store',
+        },
         hide_gitignored = true,
       },
     },

@@ -38,4 +38,5 @@ return {
       vim.keymap.set('n', '<space>-', require('oil').toggle_float)
     end,
   },
+  { 'nvim-tree/nvim-web-devicons' },
 }
