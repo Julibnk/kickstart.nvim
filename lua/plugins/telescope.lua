@@ -29,14 +29,20 @@ return { -- Fuzzy Finder (files, lsp, etc)
         wrap_results = true,
         layout_config = {
           horizontal = {
-            prompt_position = 'top',
+            prompt_position = 'bottom',
             preview_width = 0.5,
           },
           width = 0.9,
           height = 0.9,
         },
-        sorting_strategy = 'ascending',
+        sorting_strategy = 'descending',
         winblend = 0,
+        mappings = {
+          i = {
+            ['<C-j>'] = 'move_selection_next',
+            ['<C-k>'] = 'move_selection_previous',
+          },
+        },
       },
       extensions = {
         ['ui-select'] = {

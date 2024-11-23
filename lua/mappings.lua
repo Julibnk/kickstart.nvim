@@ -36,6 +36,9 @@ map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Up down scroll
+map('n', '<C-d>', '<C-d>zz')
+map('n', '<C-u>', '<C-u>zz')
 --  Move in insert mode
 map('i', '<C-i>', '<ESC>^i', { desc = 'move beginning of line' })
 map('i', '<C-a>', '<End>', { desc = 'move end of line' })
