@@ -29,13 +29,13 @@ return { -- Fuzzy Finder (files, lsp, etc)
         wrap_results = true,
         layout_config = {
           horizontal = {
-            prompt_position = 'bottom',
+            prompt_position = 'top',
             preview_width = 0.5,
           },
           width = 0.9,
           height = 0.9,
         },
-        sorting_strategy = 'descending',
+        sorting_strategy = 'ascending',
         winblend = 0,
         mappings = {
           i = {
